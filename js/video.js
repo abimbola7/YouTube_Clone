@@ -247,7 +247,6 @@ let last1 = loggArr1[0].loggedLastName;
 let avatars = loggArr1[0].loggedUserImg
 
 console.log(avatars);
-
 function Comment() {
   if (commentId.value == "") {
     commentWarning.innerHTML = "Comment box can't be empty";

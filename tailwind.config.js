@@ -56,7 +56,7 @@ module.exports = {
         "90v" : "92.5vh"
       },
       inset:{
-        "56p" : "55px",
+        "56p" : "49px",
         "13%" : "18.3%"
       },
       margin:{

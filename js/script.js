@@ -3,22 +3,16 @@
 // console.log(moment().month());
 const c = console.log.bind(document);
 const search = document.querySelector(".searchList");
+const search1 = document.querySelector(".searchList");
 const list = document.querySelector(".list");
 const searchList = document.querySelector(".searchListContainer");
 const searchContainer = document.querySelector(".search-container");
-// search.addEventListener("input", Content);
-// closeList.addEventListener("click", () => {
-//     searchContainer.classList.replace("flex", "hidden");
-//     search.value = "";
-// });
 let usernameRegex = /^[A-Za-z]{6,}$/;
 let emailRegex = /^[A-Za-z0-9#$\.]+[@]{1}[a-zA-Z]+\.[a-zA-Z]{2,3}$/;
-// let emailRegex1 = /^[A-Za-z0-9#$\.]+[@]{1}[a-zA-Z]+\.[a-zA-Z]{2,3}$/;
 let passwordRegex = /^(?=.*[A-Za-z])(?=.*[0-9])(?=.{5,})/;
 let phoneNumberRegex = /^\+[2]{1}[3]{1}[4]{1}[0-9]{10}$/;;
 let dayRegex = /^[0-9]{1,2}$/;
 let yearRegex = /^[0-9]{4}/;
-console.log(yearRegex.test("200"));
 let passwordConfirm = document.getElementById("passwordconfirm");
 let email;
 let firstName;
@@ -34,17 +28,18 @@ let firstLastNameTest = false;
 let passwordTest = false;
 let firstUserArr = [];
 
-let newArr = [1, 2, 3, 4, 5];
-let NewArr = newArr.find(
-    function (param) {
-        return param == 6;
-    }
-)
+
+
+const search2 = document.querySelector(".search2");
+function openInput() {
+    search2.classList.contains("hidden") ? search2.classList.remove("hidden") : search2.classList.add("hidden")
+}
+
 
 if (typeof param !== "object") {
     console.log('yes');
 }
-console.log(NewArr);
+// console.log(NewArr);
 
 function validate() {
     email = document.getElementById("emailreg");
@@ -294,10 +289,10 @@ function Menu() {
     document.querySelector(".mainn").classList.toggle("main");
     if (searchContainer.classList.contains("ml-250")) {
         searchContainer.classList.replace("ml-250", "ml-[75px]");
-        searchContainer.classList.add("w-[95%]");
+        searchContainer.classList.replace("w-[82.7%]","w-[94%]");
     }else{
         searchContainer.classList.replace("ml-[75px]", "ml-250");
-        searchContainer.classList.remove("w-[95%]");
+        searchContainer.classList.replace("w-[94%]", "w-[82.7%]");
     }
 }
 
@@ -639,7 +634,7 @@ function viddeos(index1, index2) {
     display();
     localStorage.setItem("validUsers", JSON.stringify(firstUserArr));
     localStorage.setItem("indexarray", JSON.stringify(indexArray));
-    window.location.assign("../pages/videosection.html");
+    window.location.assign("./pages/videosection.html");
 }
 
 // let getArr1 = localStorage.getItem("youArr");
@@ -661,6 +656,6 @@ function Profile(index3) {
     localStorage.removeItem("profile");
     profileArr.push(index3);
     localStorage.setItem("profile", JSON.stringify(profileArr));
-    window.location.assign("../pages/profile.html");
+    window.location.assign("./pages/profile.html");
     console.log(profileArr);
 }

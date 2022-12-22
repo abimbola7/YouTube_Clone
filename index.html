@@ -10,8 +10,17 @@
 </head>
 <body class="bg-bodyDark">
     <!-- Header Section -->
-    <header class="bg-header sticky top-0 tops -z-96" id="header">
+    <header class="bg-header sticky top-0 tops -z-96 overflow-scroll" id="header">
         <div class="h-12 flex justify-between items-center py-7 w-98/100 mx-auto space-x-3 relative">
+            <div class="absolute left-[5%] z-[100000] medium:hidden w-11/12 hidden search2">
+                <div class="relative w-full flex">
+                    <input type="text" class="flex-1 overflow-hidden outline outline-1 py-5 pl-4 bg-darkDark input1 outline-borderDark text-xl text-placeholderDark focus:outline-blue-400 focus:text-placeholderText h-9 font-normal valid:outline-blue-400 searchList1" placeholder="Search" id="search1" required onclick="openSearch()" oninput="Content()">
+                    <div class="absolute top-[0rem] right-0 bg-[#202020] px-3 py-1 h-10 flex items-center justify-center cursor-pointer" onclick="openInput()">
+                        <div class="fa fa-times text-white text-2xl"></div>
+                    </div>
+                </div>                
+            </div>
+            
             <!-- Logo and HamBurger -->
             <div class="flex space-x-5 justify-center items-center logo">
                 <!-- Hamburger LG-->
@@ -36,17 +45,14 @@
             <!-- searchBar -->
             <div class="items-center space-x-2 w-3/5 flex hidden medium:flex">
                 <div class="ml-20 flex items-center w-4/5 relative" id="mouseD">
-                    <input type="text" class="outline outline-1 py-3 pl-4 bg-darkDark input1 outline-borderDark text-xl text-placeholderDark focus:outline-blue-400 focus:text-placeholderText h-9 font-normal valid:outline-blue-400 searchList" placeholder="Search" id="search1" required onclick="openSearch()" oninput="Content()">
-                    <div class="fixed bg-[rgba(0,0,0,.5)] backdrop-blur-3xl h-full top-14 right-0  w-[82%] hidden justify-center search-container pb-10 ml-250">
-                        <div class="w-full px-2 flex flex-col  overflow-scroll relative pt-10">
+                    <input type="text" class="outline outline-1 py-5 pl-4 bg-darkDark input1 outline-borderDark text-xl text-placeholderDark focus:outline-blue-400 focus:text-placeholderText h-9 font-normal valid:outline-blue-400 searchList" placeholder="Search" id="search1" required onclick="openSearch()" oninput="Content()">
+                    <div class="fixed bg-[rgba(0,0,0,.5)] backdrop-blur-3xl h-full top-14 right-0  w-[82.7%] hidden justify-center search-container pb-10 ml-250 z-[100000000]">
+                        <div class="w-full px-2 flex flex-col overflow-scroll relative pt-10">
                             <div class="absolute right-3 top-3 z-50">
-                                <button id="closeList"  class="px-4 py-1" onclick="closeSearch()"><i class="fa fa-times text-white"></i></button>
+                                <button id="closeList"  class="px-4 sticky top-48 py-1" onclick="closeSearch()"><i class="fa fa-times text-white"></i></button>
                             </div>
                             <div class="searchListContainer flex flex-col space-y-6 px-4">
-
-                            </div>
-                            
-                            
+                            </div>  
                         </div>
                     </div>
                     <div class="w-10 border-l border-t border-b border-blue-400 h-[38px] justify-center items-center text-white absolute bg-[#0E0F0F] sett1 mr-0 py-3 -left-8 hidden" href="" id="setting1">
@@ -180,10 +186,12 @@
             <!-- AFTER SIGNIN -->
             <div class="flex items-center py-2 mr-4 medium:w-48 sm:w-64 w-48 border-none justify-center space-x-3 medium:space-x-5 hidden text-white" id="postSign">
                 <div class="w-12 border-none border-borderDark h-h36 flex medium:hidden justify-center items-center text-white relative" href="" id="sett">
-                    <div class="w-5">
-                        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope yt-icon" style="pointer-events: none; display: block; width: 100%; height: 100%;"><g class="style-scope yt-icon"><path d="M20.87,20.17l-5.59-5.59C16.35,13.35,17,11.75,17,10c0-3.87-3.13-7-7-7s-7,3.13-7,7s3.13,7,7,7c1.75,0,3.35-0.65,4.58-1.71 l5.59,5.59L20.87,20.17z M10,16c-3.31,0-6-2.69-6-6s2.69-6,6-6s6,2.69,6,6S13.31,16,10,16z" class="style-scope yt-icon" fill="#fff"></path></g></svg>
+                    <div class="w-10">
+                        <button class="px-2 py-2" onclick="openInput()">
+                            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope yt-icon" style="pointer-events: none; display: block; width: 100%; height: 100%;"><g class="style-scope yt-icon"><path d="M20.87,20.17l-5.59-5.59C16.35,13.35,17,11.75,17,10c0-3.87-3.13-7-7-7s-7,3.13-7,7s3.13,7,7,7c1.75,0,3.35-0.65,4.58-1.71 l5.59,5.59L20.87,20.17z M10,16c-3.31,0-6-2.69-6-6s2.69-6,6-6s6,2.69,6,6S13.31,16,10,16z" class="style-scope yt-icon" fill="#fff"></path></g></svg>
+                        </button>
                     </div>
-                    <div class="absolute tex=t-white top-11 -left-0 text-sm bg-borderTop px-2 py-1 z-96 rounded-sm settings text-white opacity-0" id="dispSet">
+                    <div class="absolute text-white top-11 -left-0 text-sm bg-borderTop px-2 py-1 z-96 rounded-sm settings text-white opacity-0" id="dispSet">
                         <span>Search</span>
                     </div>
                 </div>
@@ -745,7 +753,7 @@
     </aside>
 
     <main class="left-250 relative ml-250 z-50 mainn">
-        <nav class="sticky top-56p top2 bg-header" id="navv">
+        <nav class="sticky  top-56p top2 bg-header" id="navv">
             <div class="overflow-x-scroll overflow-y-hidden py-2 text-white border-b border-t border-borderButt navscroll relative">        
 
                 <!-- Left Button -->
